@@ -25,7 +25,8 @@ The benchmark suite includes three main test programs:
 ```bash
 # Clone the repository
 git clone <repository-url>
-cd HyperReachability_submit
+cd ReachabilityInHypergraph
+
 
 # Create build directory
 mkdir build
