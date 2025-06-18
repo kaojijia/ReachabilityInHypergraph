@@ -9,7 +9,7 @@ This repository contains benchmark implementations for various hypergraph reacha
 The benchmark suite includes three main test programs:
 
 1. **Static Query Benchmark** - Compares four different reachability methods
-2. **Dynamic HyperIndex Benchmark** - Tests dynamic updates on tree-based hypergraph index
+2. **Dynamic HRTree Benchmark** - Tests dynamic updates on tree-based hypergraph index
 3. **Dynamic Weighted Reachability (DWR) Benchmark** - Tests dynamic updates on bottleneck graph index
 
 ## Compilation
@@ -47,11 +47,6 @@ The compiled binaries will be located in:
 
 Compares the performance of four hypergraph reachability methods:
 
-- **BFS**: Bidirectional breadth-first search
-- **LayeredDS**: Layered disjoint set data structure
-- **UWeightedPLL**: Unweighted Pruned Landmark Labeling
-- **HIndex**: Hypergraph tree index
-
 #### Usage
 ```bash
 ./build/test/bench_static_query --dataset <hypergraph_file>
@@ -65,12 +60,6 @@ Compares the performance of four hypergraph reachability methods:
 ./build/test/bench_static_query --dataset /path/to/hypergraph.txt
 ```
 
-#### Output
-The benchmark reports:
-- Index building time for each method
-- Memory usage for each index
-- Average query time for different k values (k=2,4,6,8,10)
-- Performance comparison across 5000 queries per k value
 
 ### 2. Dynamic HyperIndex Benchmark (`bench_dynamic_HIndex`)
 
@@ -89,17 +78,6 @@ Tests dynamic update performance on hypergraph tree index structure.
 ./build/test/bench_dynamic_HIndex --dataset /path/to/hypergraph.txt
 ```
 
-#### Features
-- Performs 1000 vertex addition operations (adding vertices to hyperedges)
-- Performs 1000 vertex removal operations (removing vertices from hyperedges)
-- Uses caching for index files to speed up repeated runs
-- Reports average update times for different operation mixes
-
-#### Output
-The benchmark reports:
-- Index construction time and memory usage
-- Average time for add/remove operations
-- Projected performance for different operation ratios (25%/75%, 50%/50%, 75%/25%)
 
 ### 3. Dynamic Weighted Reachability Benchmark (`bench_dynamic_DWR`)
 
@@ -118,19 +96,6 @@ Tests dynamic update performance on bottleneck graph (DLCR-like) index structure
 ./build/test/bench_dynamic_DWR --dataset /path/to/hypergraph
 ```
 
-#### Features
-- Converts hypergraph to weighted graph using specified k threshold
-- Caches converted weighted graphs for reuse
-- Performs 1000 edge addition operations
-- Performs 1000 edge removal operations
-- Simulates hypergraph-derived operations (vertex-to-hyperedge additions/removals)
-
-#### Output
-The benchmark reports:
-- Index construction time and memory usage
-- Average time for dynamic edge add/remove operations
-- Internal rebuild time statistics for delete operations
-- Projected performance for different operation ratios
 
 ## Dataset Format
 
