@@ -120,7 +120,6 @@ All benchmarks expect hypergraph files in the following format:
 - Results are grouped by k values (minimum intersection size)
 
 ### Dynamic Benchmark Output
-- **Index Size**: Memory footprint of the dynamic index
 - **Update Time**: Average time per dynamic operation
 - **Operation Mix Analysis**: Projected performance for workloads with different add/remove ratios
 
