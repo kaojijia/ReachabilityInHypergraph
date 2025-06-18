@@ -17,7 +17,7 @@ The benchmark suite includes three main test programs:
 ### Prerequisites
 - CMake 3.10 or higher
 - C++17 compatible compiler (GCC 7+ or Clang 5+)
-- Google Test framework (included as submodule)
+- Google Test framework
 - Intel TBB library
 
 ### Build Instructions
